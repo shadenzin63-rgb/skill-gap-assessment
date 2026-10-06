@@ -1,0 +1,15 @@
+{
+  "user_name": "Test",
+  "answers": [
+    {"question_id": 1, "value": 5},
+    {"question_id": 2, "value": 4},
+    {"question_id": 3, "value": 2},
+    {"question_id": 4, "value": 3},
+    {"question_id": 5, "value": 4},
+    {"question_id": 6, "value": 4},
+    {"question_id": 7, "value": 2},
+    {"question_id": 8, "value": 3},
+    {"question_id": 9, "value": 5},
+    {"question_id": 10, "value": 5}
+  ]
+}
