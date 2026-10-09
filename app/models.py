@@ -28,10 +28,17 @@ class SubmitRequest(BaseModel):
         return v
 
 
+"""class Gap(BaseModel):
+    competency: str
+    label: str
+    score: float
+    why: str
+    recommendation: str"""
 class Gap(BaseModel):
     competency: str
     label: str
     score: float
+    priority: Literal["high", "medium", "low"]
     why: str
     recommendation: str
 
@@ -46,7 +53,7 @@ class GapReport(BaseModel):
 
 
 # What we ask the LLM to return (narrow on purpose)
-class LLMGap(BaseModel):
+"""class LLMGap(BaseModel):
     competency: str
     why: str
     recommendation: str
@@ -54,4 +61,13 @@ class LLMGap(BaseModel):
 
 class LLMOutput(BaseModel):
     summary: str
-    gaps: List[LLMGap]
+    gaps: List[LLMGap]"""
+class LLMGap(BaseModel):
+    competency: str
+    why: str = Field(min_length=10, max_length=400)
+    recommendation: str = Field(min_length=10, max_length=400)
+
+
+class LLMOutput(BaseModel):
+    summary: str = Field(min_length=20, max_length=600)
+    gaps: List[LLMGap] 
