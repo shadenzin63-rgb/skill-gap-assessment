@@ -12,6 +12,6 @@ class Settings(BaseSettings):
     allowed_origins: str = "http://localhost:8000"
     llm_timeout_s: float = 20.0
     llm_max_retries: int = 2
-
+    llm_temperature: float = 0.2
 
 settings = Settings()

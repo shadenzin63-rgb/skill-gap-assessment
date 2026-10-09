@@ -31,3 +31,10 @@ def split(scores: Dict[str, float]) -> Tuple[List[str], List[str]]:
     strengths = sorted([c for c, s in scores.items() if s >= GAP_THRESHOLD])
     gaps = sorted([c for c, s in scores.items() if s < GAP_THRESHOLD], key=lambda c: scores[c])
     return strengths, gaps 
+
+def priority_for(score: float) -> str:
+    if score < 2.5:
+        return "high"
+    if score < 3.5:
+        return "medium"
+    return "low"   
